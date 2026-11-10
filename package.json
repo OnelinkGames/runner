@@ -1,0 +1,25 @@
+{
+  "name": "devdesk",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Painel local de gerenciamento de aplicações de desenvolvimento",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "concurrently -n api,web -c cyan,magenta \"npm run dev -w @devdesk/api\" \"npm run dev -w @devdesk/web\"",
+    "dev:api": "npm run dev -w @devdesk/api",
+    "dev:web": "npm run dev -w @devdesk/web",
+    "build": "npm run build -w @devdesk/web",
+    "start": "npm run start -w @devdesk/api",
+    "desktop": "bash scripts/devdesk.sh",
+    "desktop:install": "bash scripts/devdesk.sh --install"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}

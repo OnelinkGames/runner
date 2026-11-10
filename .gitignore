@@ -1,0 +1,21 @@
+node_modules
+dist
+build
+.vite
+coverage
+
+# ambiente local — o DevDesk não versiona segredos
+.env
+.env.*
+!.env.example
+
+# cadastros, variáveis copiadas, logs e processos locais
+*.sqlite
+*.sqlite-journal
+*.sqlite-wal
+*.sqlite-shm
+*.log
+*.pid
+.pm2
+
+.DS_Store
